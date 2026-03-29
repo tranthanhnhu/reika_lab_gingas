@@ -9,6 +9,44 @@
         window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
     }
 
+    /** Kéo ngang bằng chuột (desktop); touch vẫn scroll native */
+    function attachHorizontalDragScroll(el) {
+        if (!el || !window.PointerEvent) return;
+        var capturedId = null;
+        var startClientX = 0;
+        var startScroll = 0;
+
+        function endDrag() {
+            if (capturedId === null) return;
+            el.classList.remove('is-dragging');
+            try {
+                el.releasePointerCapture(capturedId);
+            } catch (err) { /* noop */ }
+            capturedId = null;
+        }
+
+        el.addEventListener('pointerdown', function (e) {
+            if (e.pointerType === 'mouse' && e.button !== 0) return;
+            capturedId = e.pointerId;
+            startClientX = e.clientX;
+            startScroll = el.scrollLeft;
+            el.setPointerCapture(e.pointerId);
+        });
+
+        el.addEventListener('pointermove', function (e) {
+            if (capturedId !== e.pointerId) return;
+            var dx = e.clientX - startClientX;
+            if (Math.abs(dx) > 3) {
+                el.classList.add('is-dragging');
+                el.scrollLeft = startScroll - dx;
+                e.preventDefault();
+            }
+        });
+
+        el.addEventListener('pointerup', endDrag);
+        el.addEventListener('pointercancel', endDrag);
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
         var fadeElements = document.querySelectorAll('.fade-in');
         var observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
@@ -135,6 +173,36 @@
 
             slides.forEach(function (slide) {
                 io.observe(slide);
+            });
+        }
+
+        if (slider) {
+            attachHorizontalDragScroll(slider);
+            slider.addEventListener('keydown', function (e) {
+                var step = Math.round(slider.clientWidth * 0.4);
+                if (e.key === 'ArrowLeft') {
+                    slider.scrollLeft -= step;
+                    e.preventDefault();
+                } else if (e.key === 'ArrowRight') {
+                    slider.scrollLeft += step;
+                    e.preventDefault();
+                }
+            });
+        }
+
+        var ctaStrip = document.getElementById('cta-slider');
+        attachHorizontalDragScroll(ctaStrip);
+
+        if (ctaStrip) {
+            ctaStrip.addEventListener('keydown', function (e) {
+                var step = Math.round(ctaStrip.clientWidth * 0.35);
+                if (e.key === 'ArrowLeft') {
+                    ctaStrip.scrollLeft -= step;
+                    e.preventDefault();
+                } else if (e.key === 'ArrowRight') {
+                    ctaStrip.scrollLeft += step;
+                    e.preventDefault();
+                }
             });
         }
     });
