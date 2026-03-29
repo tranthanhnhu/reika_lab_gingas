@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" href="/images/favicon_io/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_io/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="/images/favicon_io/site.webmanifest">
+    <meta name="robots" content="noindex, follow">
+    <title>ページが見つかりません | REIKA LAB</title>
+    <meta name="description" content="お探しのページは存在しないか、移動した可能性があります。">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-white': '#FFFFFF',
+                        'brand-gold': '#D4AF37',
+                        'brand-light-green': '#E8F3E8',
+                        'brand-dark-green': '#2C3E2D',
+                        'brand-muted': '#667B67',
+                    },
+                    fontFamily: {
+                        'serif': ['"Noto Serif JP"', 'serif'],
+                        'sans': ['"Noto Sans JP"', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        'yohaku': '0.08em',
+                        'yohaku-lg': '0.12em',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased tracking-yohaku bg-brand-white text-brand-dark-green min-h-screen flex flex-col">
+
+    <header class="border-b border-brand-light-green bg-brand-white/95 backdrop-blur-sm">
+        <div class="max-w-6xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
+            <a href="/" class="font-serif text-lg md:text-xl tracking-yohaku-lg text-brand-dark-green font-semibold hover:text-brand-gold transition-colors">REIKA LAB</a>
+            <a href="/#cta-section" class="bg-brand-gold text-white px-4 md:px-6 py-2 rounded text-xs md:text-sm tracking-widest hover:bg-yellow-600 transition-colors shadow-sm">まずは始めてみる</a>
+        </div>
+    </header>
+
+    <main class="flex-1 flex flex-col items-center justify-center px-5 py-16 md:py-24">
+        <p class="text-brand-gold font-serif text-6xl md:text-8xl tracking-tight mb-2" aria-hidden="true">404</p>
+        <div class="wabi-line-v mb-8"></div>
+        <h1 class="text-xl md:text-2xl font-serif text-brand-dark-green text-center leading-relaxed mb-4">
+            お探しのページは<br class="sm:hidden">見つかりませんでした
+        </h1>
+        <p class="text-brand-muted text-sm md:text-base text-center leading-loose max-w-md mb-10">
+            URLが間違っているか、ページが移動・削除された可能性があります。トップページから再度お探しください。
+        </p>
+        <a href="/" class="inline-flex items-center justify-center bg-brand-gold text-white font-serif px-8 py-3 md:px-10 md:py-4 rounded shadow-md hover:bg-yellow-600 hover:shadow-lg transition-all tracking-widest text-sm md:text-base">
+            トップページへ戻る
+        </a>
+    </main>
+
+    <footer class="border-t border-brand-light-green py-6 md:py-8 mt-auto">
+        <div class="max-w-6xl mx-auto px-5 md:px-6 text-center text-[10px] md:text-[11px] text-brand-muted">
+            &copy; 2026 REIKA LAB All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
