@@ -66,28 +66,6 @@ h1, h2, h3, .font-serif {
     }
 }
 
-.science-media-placeholder {
-    width: 100%;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    min-height: 250px;
-    max-height: 400px;
-    height: 250px;
-    border-radius: 8px;
-    border: 1px dashed rgba(212, 175, 55, 0.35);
-    background: rgba(232, 243, 232, 0.25);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-@media (min-width: 768px) {
-    .science-media-placeholder {
-        height: 380px;
-        min-height: 380px;
-    }
-}
-
 .soft-edge-container {
     position: relative;
     border-radius: 16px;
