@@ -9,11 +9,11 @@
         window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
     }
 
-    /** Kéo ngang bằng chuột (desktop); touch vẫn scroll native */
+    /** Horizontal drag-to-scroll on desktop; touch remains native */
     function attachHorizontalDragScroll(el) {
         if (!el) return;
 
-        // Chặn drag-native (kéo ảnh tạo "ghost") làm mất cảm giác kéo slider
+        // Prevent native element dragging (image ghost drag)
         el.addEventListener('dragstart', function (e) {
             e.preventDefault();
         });
@@ -35,7 +35,7 @@
             activePointerId = null;
         }
 
-        // Ưu tiên Pointer Events (chuẩn cho cả pen/touch/mouse)
+        // Prefer Pointer Events (mouse/touch/pen)
         if (window.PointerEvent) {
             el.addEventListener('pointerdown', function (e) {
                 if (e.pointerType === 'mouse' && e.button !== 0) return;
@@ -43,14 +43,14 @@
                 activePointerId = e.pointerId;
                 startClientX = e.clientX;
                 startScroll = el.scrollLeft;
-                // Tắt snap ngay khi bắt đầu kéo (tránh cảm giác "không nhúc nhích" do snap bật lại)
+                // Disable snap while dragging for a consistent feel
                 el.classList.add('is-dragging');
                 if (el.setPointerCapture) {
                     try {
                         el.setPointerCapture(e.pointerId);
                     } catch (err) { /* noop */ }
                 }
-                // Ngăn text selection khi bắt đầu kéo trên desktop
+                // Prevent text selection on desktop
                 if (e.pointerType === 'mouse') {
                     e.preventDefault();
                 }
@@ -60,7 +60,7 @@
                 if (!isDown) return;
                 if (activePointerId !== null && e.pointerId !== activePointerId) return;
                 var dx = e.clientX - startClientX;
-                // Luôn kéo theo dx; snap đã bị tắt từ pointerdown
+                // Always track dx; snap is already disabled on pointerdown
                 el.scrollLeft = startScroll - dx;
                 if (Math.abs(dx) > 0) e.preventDefault();
             });
@@ -69,13 +69,13 @@
             el.addEventListener('pointercancel', endDrag);
             el.addEventListener('lostpointercapture', endDrag);
             el.addEventListener('pointerleave', function () {
-                // Nếu user kéo ra ngoài vùng strip
+                // End drag when leaving the strip
                 endDrag();
             });
             return;
         }
 
-        // Fallback cho browser cũ (Mouse Events)
+        // Fallback for older browsers (Mouse Events)
         el.addEventListener('mousedown', function (e) {
             if (e.button !== 0) return;
             isDown = true;
@@ -281,6 +281,20 @@
                     } catch (err) { /* noop */ }
                 });
             }
+
+        // iOS may block autoplay; ensure tap/click can still play
+            var tryPlay = function () {
+                try {
+                    var pp = video.play();
+                    if (pp && typeof pp.catch === 'function') {
+                        pp.catch(function () {
+                            try { video.controls = true; } catch (err) { /* noop */ }
+                        });
+                    }
+                } catch (err) { /* noop */ }
+            };
+            video.addEventListener('click', tryPlay);
+            video.addEventListener('touchend', tryPlay, { passive: true });
         });
     });
 })();
