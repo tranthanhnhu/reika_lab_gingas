@@ -11,40 +11,87 @@
 
     /** Kéo ngang bằng chuột (desktop); touch vẫn scroll native */
     function attachHorizontalDragScroll(el) {
-        if (!el || !window.PointerEvent) return;
-        var capturedId = null;
+        if (!el) return;
+
+        // Chặn drag-native (kéo ảnh tạo "ghost") làm mất cảm giác kéo slider
+        el.addEventListener('dragstart', function (e) {
+            e.preventDefault();
+        });
+
         var startClientX = 0;
         var startScroll = 0;
+        var isDown = false;
+        var activePointerId = null;
 
         function endDrag() {
-            if (capturedId === null) return;
+            if (!isDown) return;
+            isDown = false;
             el.classList.remove('is-dragging');
-            try {
-                el.releasePointerCapture(capturedId);
-            } catch (err) { /* noop */ }
-            capturedId = null;
+            if (activePointerId !== null && el.releasePointerCapture) {
+                try {
+                    el.releasePointerCapture(activePointerId);
+                } catch (err) { /* noop */ }
+            }
+            activePointerId = null;
         }
 
-        el.addEventListener('pointerdown', function (e) {
-            if (e.pointerType === 'mouse' && e.button !== 0) return;
-            capturedId = e.pointerId;
+        // Ưu tiên Pointer Events (chuẩn cho cả pen/touch/mouse)
+        if (window.PointerEvent) {
+            el.addEventListener('pointerdown', function (e) {
+                if (e.pointerType === 'mouse' && e.button !== 0) return;
+                isDown = true;
+                activePointerId = e.pointerId;
+                startClientX = e.clientX;
+                startScroll = el.scrollLeft;
+                // Tắt snap ngay khi bắt đầu kéo (tránh cảm giác "không nhúc nhích" do snap bật lại)
+                el.classList.add('is-dragging');
+                if (el.setPointerCapture) {
+                    try {
+                        el.setPointerCapture(e.pointerId);
+                    } catch (err) { /* noop */ }
+                }
+                // Ngăn text selection khi bắt đầu kéo trên desktop
+                if (e.pointerType === 'mouse') {
+                    e.preventDefault();
+                }
+            });
+
+            el.addEventListener('pointermove', function (e) {
+                if (!isDown) return;
+                if (activePointerId !== null && e.pointerId !== activePointerId) return;
+                var dx = e.clientX - startClientX;
+                // Luôn kéo theo dx; snap đã bị tắt từ pointerdown
+                el.scrollLeft = startScroll - dx;
+                if (Math.abs(dx) > 0) e.preventDefault();
+            });
+
+            el.addEventListener('pointerup', endDrag);
+            el.addEventListener('pointercancel', endDrag);
+            el.addEventListener('lostpointercapture', endDrag);
+            el.addEventListener('pointerleave', function () {
+                // Nếu user kéo ra ngoài vùng strip
+                endDrag();
+            });
+            return;
+        }
+
+        // Fallback cho browser cũ (Mouse Events)
+        el.addEventListener('mousedown', function (e) {
+            if (e.button !== 0) return;
+            isDown = true;
             startClientX = e.clientX;
             startScroll = el.scrollLeft;
-            el.setPointerCapture(e.pointerId);
+            e.preventDefault();
         });
-
-        el.addEventListener('pointermove', function (e) {
-            if (capturedId !== e.pointerId) return;
+        window.addEventListener('mousemove', function (e) {
+            if (!isDown) return;
             var dx = e.clientX - startClientX;
-            if (Math.abs(dx) > 3) {
+            if (Math.abs(dx) > 2) {
                 el.classList.add('is-dragging');
                 el.scrollLeft = startScroll - dx;
-                e.preventDefault();
             }
         });
-
-        el.addEventListener('pointerup', endDrag);
-        el.addEventListener('pointercancel', endDrag);
+        window.addEventListener('mouseup', endDrag);
     }
 
     document.addEventListener('DOMContentLoaded', function () {
@@ -190,10 +237,9 @@
             });
         }
 
-        var ctaStrip = document.getElementById('cta-slider');
-        attachHorizontalDragScroll(ctaStrip);
-
-        if (ctaStrip) {
+        var ctaStrips = document.querySelectorAll('.cta-strip');
+        ctaStrips.forEach(function (ctaStrip) {
+            attachHorizontalDragScroll(ctaStrip);
             ctaStrip.addEventListener('keydown', function (e) {
                 var step = Math.round(ctaStrip.clientWidth * 0.35);
                 if (e.key === 'ArrowLeft') {
@@ -204,6 +250,37 @@
                     e.preventDefault();
                 }
             });
-        }
+        });
+
+        // Add-only: extended horizontal scroll strips
+        var extScrollEls = document.querySelectorAll('[data-hscroll]');
+        extScrollEls.forEach(function (el) {
+            attachHorizontalDragScroll(el);
+            el.addEventListener('keydown', function (e) {
+                var step = Math.round(el.clientWidth * 0.35);
+                if (e.key === 'ArrowLeft') {
+                    el.scrollLeft -= step;
+                    e.preventDefault();
+                } else if (e.key === 'ArrowRight') {
+                    el.scrollLeft += step;
+                    e.preventDefault();
+                }
+            });
+        });
+
+        // Add-only: autoplay video fallback
+        var autoplayVideos = document.querySelectorAll('[data-autoplay-video]');
+        autoplayVideos.forEach(function (video) {
+            if (!video || typeof video.play !== 'function') return;
+            var p = video.play();
+            if (p && typeof p.catch === 'function') {
+                p.catch(function () {
+                    try {
+                        video.pause();
+                        video.controls = true;
+                    } catch (err) { /* noop */ }
+                });
+            }
+        });
     });
 })();

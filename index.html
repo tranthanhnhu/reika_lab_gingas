@@ -47,7 +47,7 @@
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css?v=1.0.1">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
@@ -117,6 +117,46 @@
             </div>
         </section>
 
+        <!-- Marquee (single row, slow infinite loop) -->
+        <section id="marquee" class="ext-marquee-section">
+            <div class="ext-marquee">
+                <div class="ext-marquee__track" aria-label="品質情報マルキー">
+                    <div class="ext-marquee__content">
+                        <span class="ext-marquee__item ext-marquee__item--gold">日本製 — プレミアムクオリティ</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__pill">2週間で「軽さ」を実感した方が95%</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">品質試験実施</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">ISO/IEC 17025</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">GMP</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__pill">クリーンルーム製造</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">自動化による精密管理</span>
+                        <span class="ext-marquee__sep">•</span>
+                    </div>
+                    <div class="ext-marquee__content" aria-hidden="true">
+                        <span class="ext-marquee__item ext-marquee__item--gold">日本製 — プレミアムクオリティ</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__pill">2週間で「軽さ」を実感した方が95%</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">品質試験実施</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">ISO/IEC 17025</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">GMP</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__pill">クリーンルーム製造</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">自動化による精密管理</span>
+                        <span class="ext-marquee__sep">•</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="empathy" class="py-12 md:py-24 bg-brand-light-green relative">
             <div class="max-w-4xl mx-auto px-5 md:px-6 text-center fade-in">
                 <div class="space-y-4 md:space-y-6 text-lg sm:text-xl md:text-2xl font-serif text-brand-dark-green leading-relaxed mb-8 md:mb-12">
@@ -165,7 +205,7 @@
                 </div>
                 <div class="relative mt-12 md:mt-16 w-full max-w-6xl mx-auto">
                     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(100%,28rem)] h-40 md:h-56 bg-white/50 blur-[40px] md:blur-[50px] rounded-full pointer-events-none z-0" aria-hidden="true"></div>
-                    <div id="cta-slider" class="cta-strip relative z-10 flex overflow-x-auto snap-x snap-mandatory gap-3 md:gap-4 px-3 md:px-5 scroll-px-3 md:scroll-px-5 pt-1 pb-3 cursor-grab active:cursor-grabbing" tabindex="0" role="region" aria-label="商品イメージ（左右にスクロール）">
+                    <div id="cta-slider-bottom" class="cta-strip relative z-10 flex overflow-x-auto snap-x snap-mandatory gap-3 md:gap-4 px-3 md:px-5 scroll-px-3 md:scroll-px-5 pt-1 pb-3 cursor-grab active:cursor-grabbing" tabindex="0" role="region" aria-label="商品イメージ（左右にスクロール）">
                         <div class="snap-start shrink-0 w-[9.5rem] sm:w-44 md:w-52">
                             <div class="h-40 sm:h-44 md:h-52 rounded-xl border border-brand-gold/35 bg-white shadow-md p-2 md:p-3 flex items-center justify-center">
                                 <img src="images/reika_hero.png" alt="REIKA LAB パッケージ" width="600" height="600" class="max-h-full max-w-full object-contain" decoding="async" draggable="false">
@@ -280,6 +320,45 @@
             </div>
         </section>
 
+        <section id="marquee" class="ext-marquee-section">
+            <div class="ext-marquee">
+                <div class="ext-marquee__track" aria-label="品質情報マルキー">
+                    <div class="ext-marquee__content">
+                        <span class="ext-marquee__item ext-marquee__item--gold">日本製 — プレミアムクオリティ</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__pill">2週間で「軽さ」を実感した方が95%</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">品質試験実施</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">ISO/IEC 17025</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">GMP</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__pill">クリーンルーム製造</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">自動化による精密管理</span>
+                        <span class="ext-marquee__sep">•</span>
+                    </div>
+                    <div class="ext-marquee__content" aria-hidden="true">
+                        <span class="ext-marquee__item ext-marquee__item--gold">日本製 — プレミアムクオリティ</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__pill">2週間で「軽さ」を実感した方が95%</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">品質試験実施</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">ISO/IEC 17025</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">GMP</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__pill">クリーンルーム製造</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">自動化による精密管理</span>
+                        <span class="ext-marquee__sep">•</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="science" class="py-12 md:py-24 relative overflow-hidden bg-brand-light-green/30">
             <div class="gold-diagonal"></div>
             <div class="max-w-6xl mx-auto px-5 md:px-6 relative z-10 flex flex-col md:flex-row items-center">
@@ -359,6 +438,428 @@
             </div>
         </section>
 
+        <section id="ext-hero" class="py-14 md:py-24 bg-brand-white">
+            <div class="max-w-6xl mx-auto px-5 md:px-6">
+                <div class="flex flex-col md:flex-row items-center gap-10 md:gap-14 fade-in">
+                    <div class="w-full md:w-1/2 text-center md:text-left">
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-serif text-brand-dark-green leading-relaxed tracking-yohaku-lg">
+                            シンプルな習慣。<br class="hidden sm:block">科学的なバランス。
+                        </h2>
+                        <p class="mt-4 text-base sm:text-lg md:text-xl text-brand-muted leading-loose">
+                            毎日を整える、2スティック。
+                        </p>
+                        <div class="inline-flex items-center space-x-2 border border-brand-gold/30 px-5 py-2 rounded-full mt-6 bg-white/60 backdrop-blur-sm">
+                            <span class="text-brand-gold text-lg leading-none">✔</span>
+                            <span class="text-xs md:text-sm tracking-widest text-brand-dark-green font-serif">日本製・品質試験実施</span>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <div class="bg-white rounded-2xl border border-brand-gold/15 shadow-lg p-3 md:p-4">
+                            <div class="aspect-[4/3] rounded-xl overflow-hidden border border-brand-light-green relative">
+                                <img src="images/ext-hero.jpg" alt="REIKA LAB 製品（正面）" width="1024" height="827" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                                <div class="absolute inset-0 bg-brand-dark-green/10"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- B) ext-ingredient -->
+        <section id="ext-ingredient" class="py-14 md:py-24 bg-brand-light-green/20">
+            <div class="max-w-6xl mx-auto px-5 md:px-6">
+                <div class="flex flex-col md:flex-row items-center gap-10 md:gap-14 fade-in">
+                    <div class="w-full md:w-1/2 order-2 md:order-1">
+                        <div class="bg-white rounded-2xl border border-brand-gold/15 shadow-lg p-3 md:p-4">
+                            <div class="aspect-[4/3] rounded-xl overflow-hidden border border-brand-light-green relative">
+                                <img src="images/ext-ingredient.jpg" alt="粉末（成分イメージ）" width="768" height="1024" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                                <div class="absolute inset-0 bg-brand-dark-green/10"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 text-center md:text-left order-1 md:order-2">
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-serif text-brand-dark-green leading-relaxed tracking-yohaku-lg">
+                            ブラックジンジャー抽出物<br>
+                            <span class="text-brand-gold">PMF 15mg</span>
+                        </h2>
+                        <p class="mt-4 text-base sm:text-lg md:text-xl text-brand-muted leading-loose">
+                            希少成分が代謝バランスをサポート
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW) ext-product-faces (4 faces grid) -->
+        <section id="ext-product-faces" class="py-14 md:py-24 bg-brand-white">
+            <div class="max-w-6xl mx-auto px-5 md:px-6">
+                <div class="text-center mb-10 md:mb-14 fade-in">
+                    <h2 class="text-2xl sm:text-3xl font-serif text-brand-dark-green tracking-yohaku-lg leading-relaxed">
+                        見える品質。伝わる信頼。
+                    </h2>
+                    <p class="mt-3 text-sm md:text-base text-brand-muted leading-loose">
+                        正面・側面・背面まで、情報を整然と。
+                    </p>
+                </div>
+
+                <div class="ext-faces-grid fade-in">
+                    <figure class="ext-faces-tile ext-faces-tile--a">
+                        <img src="images/ext-product-faces_1.jpg" alt="パッケージ（正面）" width="1024" height="885" loading="lazy" decoding="async">
+                    </figure>
+                    <figure class="ext-faces-tile ext-faces-tile--b">
+                        <img src="images/ext-product-faces_2.jpg" alt="パッケージ（背面）" width="1024" height="885" loading="lazy" decoding="async">
+                    </figure>
+                    <figure class="ext-faces-tile ext-faces-tile--c">
+                        <img src="images/ext-product-faces_3.jpg" alt="パッケージ（側面）" width="967" height="974" loading="lazy" decoding="async">
+                    </figure>
+                    <figure class="ext-faces-tile ext-faces-tile--d">
+                        <img src="images/ext-product-faces_4.jpg" alt="パッケージ（裏面ディテール）" width="924" height="827" loading="lazy" decoding="async">
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section id="marquee" class="ext-marquee-section">
+            <div class="ext-marquee">
+                <div class="ext-marquee__track" aria-label="品質情報マルキー">
+                    <div class="ext-marquee__content">
+                        <span class="ext-marquee__item ext-marquee__item--gold">日本製 — プレミアムクオリティ</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__pill">2週間で「軽さ」を実感した方が95%</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">品質試験実施</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">ISO/IEC 17025</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">GMP</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__pill">クリーンルーム製造</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">自動化による精密管理</span>
+                        <span class="ext-marquee__sep">•</span>
+                    </div>
+                    <div class="ext-marquee__content" aria-hidden="true">
+                        <span class="ext-marquee__item ext-marquee__item--gold">日本製 — プレミアムクオリティ</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__pill">2週間で「軽さ」を実感した方が95%</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">品質試験実施</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">ISO/IEC 17025</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">GMP</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__pill">クリーンルーム製造</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">自動化による精密管理</span>
+                        <span class="ext-marquee__sep">•</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- C + D) ext-pouring + ext-video (2 columns on desktop) -->
+        <section id="ext-media-duo" class="py-14 md:py-24 bg-brand-light-green/20">
+            <div class="max-w-6xl mx-auto px-5 md:px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch">
+                    <!-- Left: pouring -->
+                    <div id="ext-pouring" class="fade-in">
+                        <div class="ext-media-frame">
+                            <div class="ext-media-frame__inner">
+                                <div class="relative w-full h-[35vh] md:h-[46vh] lg:h-[52vh] overflow-hidden rounded-[1.1rem]">
+                                    <img src="images/ext-pouring.jpg" alt="粉末を注ぐ（使用イメージ）" width="967" height="974" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                                    <div class="absolute inset-0 bg-brand-dark-green/10"></div>
+                                    <div class="absolute inset-0 flex items-end">
+                                        <div class="w-full pb-8 md:pb-10 px-5 md:px-8 flex justify-center">
+                                            <div class="inline-flex items-center px-5 md:px-6 py-3 md:py-4 rounded-xl bg-white/70 backdrop-blur-sm border border-brand-gold/20 shadow-sm">
+                                                <p class="font-serif text-brand-dark-green tracking-yohaku-lg text-base md:text-xl text-center">
+                                                    1日2スティック。静かに続く。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: video -->
+                    <div id="ext-video" class="fade-in">
+                        <div class="ext-media-frame">
+                            <div class="ext-media-frame__inner">
+                                <div class="relative w-full h-[44vh] md:h-[46vh] lg:h-[52vh] overflow-hidden rounded-[1.1rem]">
+                                    <video
+                                        class="w-full h-full object-cover"
+                                        autoplay
+                                        loop
+                                        muted
+                                        playsinline
+                                        preload="metadata"
+                                        poster="ChijHuong/S__8626208.jpg"
+                                        data-autoplay-video
+                                    >
+                                        <source src="images/ext-video.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="absolute inset-0 bg-brand-dark-green/15"></div>
+                                    <div class="absolute inset-0 flex items-start justify-start px-5 md:px-8 pt-5 md:pt-6">
+                                        <div class="inline-flex items-center px-5 md:px-6 py-3 md:py-4 rounded-xl bg-white/70 backdrop-blur-sm border border-brand-gold/20 shadow-sm">
+                                            <p class="font-serif text-brand-dark-green tracking-yohaku-lg text-base md:text-xl">
+                                                シンプル。クリーン。毎日の習慣。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- E) ext-product-detail -->
+        <section id="ext-product-detail" class="py-14 md:py-24 bg-brand-light-green/20">
+            <div class="max-w-5xl mx-auto px-5 md:px-6">
+                <div class="text-center mb-10 md:mb-14 fade-in">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-serif text-brand-dark-green tracking-yohaku-lg leading-relaxed">成分と設計</h2>
+                    <p class="mt-3 text-brand-muted text-sm md:text-base leading-loose">NMN + PMF + BR-108。バランスを、科学的に。</p>
+                </div>
+
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl border border-brand-gold/15 shadow-lg p-4 md:p-6 fade-in">
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center">
+                        <div class="md:col-span-6">
+                            <div class="aspect-[4/3] rounded-xl overflow-hidden border border-brand-light-green">
+                                <img src="images/ext-hero.jpg" alt="パッケージ（背面）" width="924" height="973" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+                        <div class="md:col-span-6">
+                            <div class="space-y-6">
+                                <div>
+                                    <h3 class="font-serif text-brand-dark-green text-lg md:text-xl tracking-widest">ポイント</h3>
+                                    <p class="mt-2 text-brand-muted text-sm md:text-base leading-loose">
+                                        続けやすさを最優先に。<br>
+                                        毎日のリズムへ、静かに馴染む設計。
+                                    </p>
+                                </div>
+                                <div class="border-t border-dashed border-brand-gold/25 pt-5">
+                                    <h3 class="font-serif text-brand-dark-green text-lg md:text-xl tracking-widest">配合</h3>
+                                    <ul class="mt-3 space-y-2 text-sm md:text-base text-brand-muted leading-loose">
+                                        <li><span class="text-brand-dark-green font-serif">PMF</span>：ブラックジンジャー由来</li>
+                                        <li><span class="text-brand-dark-green font-serif">BR-108</span>：ポストバイオティクス（登録商標）</li>
+                                        <li>日本国内基準に準拠した品質管理</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- F) ext-scientific (horizontal slider) -->
+        <section id="ext-scientific" class="py-14 md:py-24 bg-brand-white">
+            <div class="max-w-6xl mx-auto px-5 md:px-6">
+                <div class="text-center mb-10 md:mb-14 fade-in">
+                    <h2 class="text-2xl md:text-3xl font-serif text-brand-dark-green tracking-yohaku-lg uppercase">Scientific</h2>
+                    <p class="mt-2 text-brand-gold text-sm md:text-base font-serif">検査・認証・特許</p>
+                </div>
+
+                <div class="relative fade-in">
+                    <div class="ext-h-scroll flex overflow-x-auto snap-x snap-mandatory gap-4 md:gap-6 pb-6 pt-2 px-2" tabindex="0" role="region" aria-label="検査・認証スライダー（左右にスクロール）" data-hscroll>
+                        <article class="snap-start shrink-0 w-[86%] sm:w-[60%] md:w-[36%] bg-white rounded-2xl border border-brand-gold/15 shadow-sm hover:-translate-y-1 transition-transform duration-300 overflow-hidden">
+                            <div class="ext-a4-frame" aria-label="A4プレビュー">
+                                <div class="ext-a4-frame__paper">
+                                    <img src="images/sicentific-gmp.jpg" alt="GMP（A4）" width="840" height="1188" class="ext-a4-frame__img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                            <div class="p-5 md:p-6">
+                                <h3 class="font-serif text-brand-dark-green text-lg md:text-xl leading-snug">GMP</h3>
+                                <p class="mt-2 text-brand-muted text-sm leading-loose">品質基準</p>
+                            </div>
+                        </article>
+
+                        <article class="snap-start shrink-0 w-[86%] sm:w-[60%] md:w-[36%] bg-white rounded-2xl border border-brand-gold/15 shadow-sm hover:-translate-y-1 transition-transform duration-300 overflow-hidden">
+                            <div class="ext-a4-frame" aria-label="A4プレビュー">
+                                <div class="ext-a4-frame__paper">
+                                    <img src="images/sicentific-patent.jpg" alt="特許（A4）" width="840" height="1188" class="ext-a4-frame__img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                            <div class="p-5 md:p-6">
+                                <h3 class="font-serif text-brand-dark-green text-lg md:text-xl leading-snug">特許</h3>
+                                <p class="mt-2 text-brand-muted text-sm leading-loose">BR-108（日本）</p>
+                            </div>
+                        </article>
+                        
+                        <!-- <article class="snap-start shrink-0 w-[86%] sm:w-[60%] md:w-[36%] bg-white rounded-2xl border border-brand-gold/15 shadow-sm hover:-translate-y-1 transition-transform duration-300 overflow-hidden">
+                            <div class="ext-a4-frame" aria-label="A4プレビュー">
+                                <div class="ext-a4-frame__paper">
+                                    <img src="images/sicentific-analysis.jpg" alt="成分分析（A4）" width="840" height="1188" class="ext-a4-frame__img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                            <div class="p-5 md:p-6">
+                                <h3 class="font-serif text-brand-dark-green text-lg md:text-xl leading-snug">成分分析</h3>
+                                <p class="mt-2 text-brand-muted text-sm leading-loose">（画像は後で差し替え）</p>
+                            </div>
+                        </article> -->
+
+                        <article class="snap-start shrink-0 w-[86%] sm:w-[60%] md:w-[36%] bg-white rounded-2xl border border-brand-gold/15 shadow-sm hover:-translate-y-1 transition-transform duration-300 overflow-hidden">
+                            <div class="ext-a4-frame" aria-label="A4プレビュー">
+                                <div class="ext-a4-frame__paper">
+                                    <img src="images/sicentific-iso.jpg" alt="ISO/IEC 17025（A4）" width="840" height="1188" class="ext-a4-frame__img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                            <div class="p-5 md:p-6">
+                                <h3 class="font-serif text-brand-dark-green text-lg md:text-xl leading-snug">ISO/IEC 17025</h3>
+                                <p class="mt-2 text-brand-muted text-sm leading-loose">認定試験機関</p>
+                            </div>
+                        </article>
+
+                        <!-- <article class="snap-start shrink-0 w-[86%] sm:w-[60%] md:w-[36%] bg-white rounded-2xl border border-brand-gold/15 shadow-sm hover:-translate-y-1 transition-transform duration-300 overflow-hidden">
+                            <div class="ext-a4-frame" aria-label="A4プレビュー">
+                                <div class="ext-a4-frame__paper">
+                                    <img src="images/sicentific-cfs.jpg" alt="証明書（A4）" width="840" height="1188" class="ext-a4-frame__img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                            <div class="p-5 md:p-6">
+                                <h3 class="font-serif text-brand-dark-green text-lg md:text-xl leading-snug">証明書</h3>
+                                <p class="mt-2 text-brand-muted text-sm leading-loose">日本（CFS）</p>
+                            </div>
+                        </article> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- G) ext-factory -->
+        <section id="ext-factory" class="py-14 md:py-24 bg-brand-light-green/30 relative overflow-hidden">
+            <div class="gold-diagonal"></div>
+            <div class="max-w-6xl mx-auto px-5 md:px-6 relative z-10">
+                <div class="text-center mb-10 md:mb-14 fade-in">
+                    <h2 class="text-2xl md:text-3xl font-serif text-brand-dark-green tracking-yohaku-lg uppercase">Factory</h2>
+                    <p class="mt-2 text-brand-gold text-sm md:text-base font-serif">製造プロセス</p>
+                </div>
+
+                <div class="ext-h-scroll flex overflow-x-auto snap-x snap-mandatory gap-4 md:gap-6 pb-6 pt-2 px-2 fade-in" tabindex="0" role="region" aria-label="工場スライダー（左右にスクロール）" data-hscroll>
+                    <figure class="snap-start shrink-0 w-[86%] sm:w-[60%] md:w-[32%] bg-white rounded-2xl border border-brand-gold/15 shadow-sm overflow-hidden">
+                        <div class="aspect-[4/3] overflow-hidden">
+                            <img src="images/factory_1.jpg" alt="自動化設備" width="768" height="1024" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                        </div>
+                        <figcaption class="p-5 md:p-6">
+                            <div class="font-serif text-brand-dark-green text-lg tracking-widest">自動化による精密管理</div>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="snap-start shrink-0 w-[86%] sm:w-[60%] md:w-[32%] bg-white rounded-2xl border border-brand-gold/15 shadow-sm overflow-hidden">
+                        <div class="aspect-[4/3] overflow-hidden">
+                            <img src="images/factory_2.jpg" alt="清潔環境での包装" width="768" height="1024" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                        </div>
+                        <figcaption class="p-5 md:p-6">
+                            <div class="font-serif text-brand-dark-green text-lg tracking-widest">クリーンルーム製造</div>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="snap-start shrink-0 w-[86%] sm:w-[60%] md:w-[32%] bg-white rounded-2xl border border-brand-gold/15 shadow-sm overflow-hidden">
+                        <div class="aspect-[4/3] overflow-hidden">
+                            <img src="images/factory_3.jpg" alt="包装ライン" width="768" height="1024" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                        </div>
+                        <figcaption class="p-5 md:p-6">
+                            <div class="font-serif text-brand-dark-green text-lg tracking-widest">工程ごとの確認と管理</div>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section id="marquee" class="ext-marquee-section">
+            <div class="ext-marquee">
+                <div class="ext-marquee__track" aria-label="品質情報マルキー">
+                    <div class="ext-marquee__content">
+                        <span class="ext-marquee__item ext-marquee__item--gold">日本製 — プレミアムクオリティ</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__pill">2週間で「軽さ」を実感した方が95%</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">品質試験実施</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">ISO/IEC 17025</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">GMP</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__pill">クリーンルーム製造</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">自動化による精密管理</span>
+                        <span class="ext-marquee__sep">•</span>
+                    </div>
+                    <div class="ext-marquee__content" aria-hidden="true">
+                        <span class="ext-marquee__item ext-marquee__item--gold">日本製 — プレミアムクオリティ</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__pill">2週間で「軽さ」を実感した方が95%</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">品質試験実施</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">ISO/IEC 17025</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">GMP</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__pill">クリーンルーム製造</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">自動化による精密管理</span>
+                        <span class="ext-marquee__sep">•</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- H) ext-product-gallery -->
+        <section id="ext-product-gallery" class="py-14 md:py-24 bg-brand-white">
+            <div class="max-w-6xl mx-auto px-5 md:px-6">
+                <div class="text-center mb-10 md:mb-14 fade-in">
+                    <h2 class="text-2xl sm:text-3xl font-serif text-brand-dark-green tracking-yohaku-lg leading-relaxed">
+                        どんな日常にも、静かに馴染む。
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-5 fade-in">
+                    <div class="md:col-span-7 group relative overflow-hidden rounded-xl aspect-[4/3] bg-white border border-brand-gold/10 shadow-sm">
+                        <img src="images/ext-hero.jpg" alt="製品イメージ" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width="923" height="1022" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent"></div>
+                    </div>
+
+                    <div class="md:col-span-5 grid grid-cols-2 gap-3 md:gap-5">
+                        <div class="group relative overflow-hidden rounded-xl aspect-square bg-white border border-brand-gold/10 shadow-sm">
+                            <img src="images/ext-ingredient.jpg" alt="スティック（ディテール）" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width="923" height="1022" loading="lazy" decoding="async">
+                        </div>
+                        <div class="group relative overflow-hidden rounded-xl aspect-square bg-white border border-brand-gold/10 shadow-sm">
+                            <img src="images/gallery_1.jpg" alt="パッケージとスティック" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width="1024" height="885" loading="lazy" decoding="async">
+                        </div>
+                        <div class="group relative overflow-hidden rounded-xl aspect-square bg-white border border-brand-gold/10 shadow-sm">
+                            <img src="images/gallery_2.jpg" alt="スティック（単体）" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width="923" height="1022" loading="lazy" decoding="async">
+                        </div>
+                        <div class="group relative overflow-hidden rounded-xl aspect-square bg-white border border-brand-gold/10 shadow-sm">
+                            <img src="images/gallery_3.jpg" alt="粉末とスティック" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width="1024" height="864" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- I) ext-cta (bridge; existing CTA remains unchanged later) -->
+        <section id="ext-cta" class="py-14 md:py-20 bg-brand-white">
+            <div class="max-w-4xl mx-auto px-5 md:px-6 text-center fade-in">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-serif text-brand-dark-green leading-relaxed tracking-yohaku-lg">
+                    続けやすさを、今日から。
+                </h2>
+                <p class="mt-4 text-sm md:text-base text-brand-muted leading-loose">
+                    日本製。品質試験実施。
+                </p>
+
+                <div class="mt-8">
+                    <button type="button" class="bg-brand-gold text-white text-base md:text-xl font-serif px-10 py-4 md:px-14 md:py-5 rounded shadow-lg hover:shadow-xl hover:bg-yellow-600 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group w-full sm:w-auto">
+                        <span class="relative z-10 tracking-widest">予約販売（近日発売予定）</span>
+                        <div class="absolute inset-0 h-full w-0 bg-white/20 group-hover:w-full transition-all duration-500 ease-out z-0"></div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
         <section id="trust" class="py-16 md:py-24 washi-bg border-y border-brand-gold/20 relative overflow-hidden">
             <!-- Background effects -->
             <div class="absolute top-0 left-0 w-64 h-64 bg-brand-light-green/40 rounded-full blur-[80px] -translate-x-1/2 -translate-y-1/2"></div>
@@ -417,6 +918,46 @@
             </div>
         </section>
 
+        <!-- Marquee (secondary; repeated lower on page) -->
+        <section id="marquee-secondary" class="ext-marquee-section">
+            <div class="ext-marquee">
+                <div class="ext-marquee__track" aria-label="品質情報マルキー（下部）">
+                    <div class="ext-marquee__content">
+                        <span class="ext-marquee__item ext-marquee__item--gold">日本製 — プレミアムクオリティ</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__pill">2週間で「軽さ」を実感した方が95%</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">品質試験実施</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">ISO/IEC 17025</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">GMP</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__pill">クリーンルーム製造</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">自動化による精密管理</span>
+                        <span class="ext-marquee__sep">•</span>
+                    </div>
+                    <div class="ext-marquee__content" aria-hidden="true">
+                        <span class="ext-marquee__item ext-marquee__item--gold">日本製 — プレミアムクオリティ</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__pill">2週間で「軽さ」を実感した方が95%</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">品質試験実施</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">ISO/IEC 17025</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">GMP</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__pill">クリーンルーム製造</span>
+                        <span class="ext-marquee__sep">•</span>
+                        <span class="ext-marquee__item ext-marquee__item--gold">自動化による精密管理</span>
+                        <span class="ext-marquee__sep">•</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <section id="review" class="py-12 md:py-24 bg-brand-white">
             <div class="max-w-5xl mx-auto px-5 md:px-6">
                 <div class="text-center mb-10 md:mb-12 fade-in">
@@ -621,7 +1162,7 @@
                             <div class="md:col-span-7 order-2 min-h-[220px] md:min-h-0">
                                 <div class="company-map-embed rounded-lg overflow-hidden border border-gray-100 bg-gray-100 h-[240px] md:h-full md:min-h-[280px]">
                                     <iframe
-                                        src="https://maps.google.com/maps?q=%E3%80%92135-0063%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%9D%B1%E5%8C%BA%E6%9C%89%E6%98%8E%EF%BC%93%E4%B8%81%E7%9B%AE%EF%BC%97%E2%88%92%EF%BC%92%EF%BC%96%20%E6%9C%89%E6%98%8E%E3%83%95%E3%83%AD%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E3%83%93%E3%83%AB%20B%E6%A3%9F9%E9%9A%8E&amp;hl=ja&amp;z=17&amp;ie=UTF8&amp;output=embed"
+                                        src="https://maps.google.com/maps?q=%E3%80%92135-0063%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%9D%B1%E5%8C%BA%E6%9C%89%E6%98%8E%EF%BC%93%E4%B8%81%E7%9B%AE%EF%BC%97%E2%88%95%EF%BC%95%EF%BC%96%20%E6%9C%89%E6%98%8E%E3%83%95%E3%83%AD%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E3%83%93%E3%83%AB%20B%E6%A3%9F9%E9%9A%8E&amp;hl=ja&amp;z=17&amp;ie=UTF8&amp;output=embed"
                                         title="〒135-0063 東京都江東区有明３丁目７−２６ 有明フロンティアビル B棟9階 の地図"
                                         width="100%"
                                         height="100%"

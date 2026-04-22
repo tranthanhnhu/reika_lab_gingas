@@ -159,6 +159,303 @@ h1, h2, h3, .font-serif {
     user-select: none;
 }
 
+/* ===================================================== */
+/* Add-only: Extended landing (ext-*) - additive styles   */
+/* ===================================================== */
+
+/* Full-bleed sections inside centered layout */
+.ext-full-bleed {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+}
+
+/* Generic horizontal scroll strip (used by ext sliders) */
+.ext-h-scroll {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    touch-action: pan-x;
+}
+.ext-h-scroll::-webkit-scrollbar {
+    display: none;
+}
+.ext-h-scroll.is-dragging {
+    scroll-snap-type: none;
+    cursor: grabbing;
+    user-select: none;
+}
+
+/* Framed media container (pouring/video) */
+.ext-media-frame {
+    position: relative;
+    border-radius: 22px;
+    padding: 10px;
+    border: 1px solid rgba(212, 175, 55, 0.22);
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: 0 18px 44px rgba(44, 62, 45, 0.10);
+}
+@media (min-width: 768px) {
+    .ext-media-frame {
+        padding: 12px;
+        border-radius: 26px;
+    }
+}
+.ext-media-frame__inner {
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(232, 243, 232, 0.9);
+    box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.06);
+}
+
+/* PDF document preview tile (fallback cover) */
+.ext-doc-preview {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: linear-gradient(180deg, rgba(232, 243, 232, 0.45), rgba(255, 255, 255, 1));
+    border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+    overflow: hidden;
+}
+.ext-doc-preview__object {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: transparent;
+}
+.ext-doc-preview__fallback {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(circle at 30% 20%, rgba(212, 175, 55, 0.12), transparent 55%),
+        radial-gradient(circle at 70% 80%, rgba(44, 62, 45, 0.10), transparent 60%);
+    pointer-events: none;
+}
+.ext-doc-preview__badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 9999px;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    color: #2C3E2D;
+    background: rgba(255, 255, 255, 0.85);
+    font-family: "Noto Serif JP", serif;
+    letter-spacing: 0.08em;
+}
+
+/* Image placeholder for scientific cards (user will replace later) */
+.ext-media-placeholder {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.16), transparent 60%),
+        radial-gradient(circle at 80% 80%, rgba(44, 62, 45, 0.12), transparent 55%),
+        linear-gradient(180deg, rgba(232, 243, 232, 0.55), rgba(255, 255, 255, 1));
+    border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+}
+.ext-media-placeholder__label {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Noto Serif JP", serif;
+    letter-spacing: 0.12em;
+    color: rgba(44, 62, 45, 0.55);
+    font-size: 0.95rem;
+}
+@media (min-width: 768px) {
+    .ext-media-placeholder__label { font-size: 1.05rem; }
+}
+
+/* A4 framed preview (scientific cards) */
+.ext-a4-frame {
+    padding: 14px 14px 12px;
+    background: rgba(232, 243, 232, 0.35);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+}
+.ext-a4-frame__paper {
+    position: relative;
+    width: min(100%, 260px);
+    margin: 0 auto;
+    aspect-ratio: 210 / 297;
+    border-radius: 14px;
+    background: #fff;
+    border: 1px solid rgba(212, 175, 55, 0.22);
+    box-shadow: 0 18px 40px rgba(44, 62, 45, 0.12);
+    overflow: hidden;
+}
+.ext-a4-frame__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.01);
+}
+.ext-a4-frame__object {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: transparent;
+}
+.ext-a4-frame__fallback {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Noto Serif JP", serif;
+    letter-spacing: 0.16em;
+    color: rgba(44, 62, 45, 0.45);
+}
+.ext-a4-frame__paper--placeholder {
+    background:
+        radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.14), transparent 60%),
+        radial-gradient(circle at 80% 80%, rgba(44, 62, 45, 0.10), transparent 55%),
+        linear-gradient(180deg, rgba(232, 243, 232, 0.45), rgba(255, 255, 255, 1));
+}
+@media (min-width: 768px) {
+    .ext-a4-frame {
+        padding: 16px 16px 14px;
+    }
+    .ext-a4-frame__paper {
+        width: min(100%, 280px);
+    }
+}
+
+/* Marquee (2 rows, slow infinite loop) */
+.ext-marquee-section {
+    background: rgba(232, 243, 232, 0.85);
+    border-top: 1px solid rgba(212, 175, 55, 0.18);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+    overflow: hidden;
+}
+.ext-marquee {
+    position: relative;
+    overflow: hidden;
+}
+.ext-marquee::before,
+.ext-marquee::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 56px;
+    z-index: 2;
+    pointer-events: none;
+}
+.ext-marquee::before {
+    left: 0;
+    background: linear-gradient(90deg, rgba(232, 243, 232, 0.95), rgba(232, 243, 232, 0));
+}
+.ext-marquee::after {
+    right: 0;
+    background: linear-gradient(270deg, rgba(232, 243, 232, 0.95), rgba(232, 243, 232, 0));
+}
+.ext-marquee__track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    will-change: transform;
+    animation: extMarquee 30s linear infinite;
+}
+.ext-marquee__content {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    padding: 12px 0;
+}
+@media (min-width: 768px) {
+    .ext-marquee__content { padding: 14px 0; }
+}
+.ext-marquee__item {
+    font-family: "Noto Serif JP", serif;
+    letter-spacing: 0.12em;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+@media (min-width: 768px) {
+    .ext-marquee__item { font-size: 1rem; }
+}
+.ext-marquee__sep {
+    opacity: 0.55;
+    white-space: nowrap;
+}
+.ext-marquee__item--gold,
+.ext-marquee__sep {
+    color: #D4AF37;
+}
+.ext-marquee__pill {
+    color: rgba(255, 255, 255, 0.98);
+    background: rgba(44, 62, 45, 0.55);
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    letter-spacing: 0.08em;
+    text-shadow: 0 1px 10px rgba(44, 62, 45, 0.22);
+}
+
+@keyframes extMarquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* 4-faces asymmetric grid */
+.ext-faces-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+@media (min-width: 768px) {
+    .ext-faces-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        max-width: 980px;
+        margin: 0 auto;
+    }
+}
+.ext-faces-tile {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid rgba(212, 175, 55, 0.12);
+    box-shadow: 0 12px 28px rgba(44, 62, 45, 0.08);
+    background: #fff;
+    transition: transform 300ms ease, box-shadow 300ms ease;
+}
+.ext-faces-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform: scale(1.01);
+    transition: transform 700ms ease;
+}
+.ext-faces-tile:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 44px rgba(44, 62, 45, 0.12);
+}
+.ext-faces-tile:hover img {
+    transform: scale(1.05);
+}
+.ext-faces-tile--a { aspect-ratio: 1 / 1; }
+.ext-faces-tile--b { aspect-ratio: 1 / 1; }
+.ext-faces-tile--c { aspect-ratio: 1 / 1; }
+.ext-faces-tile--d { aspect-ratio: 1 / 1; }
+
 .faq-answer-wrapper {
     display: grid;
     grid-template-rows: 0fr;
