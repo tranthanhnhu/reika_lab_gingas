@@ -535,6 +535,63 @@ h1, h2, h3, .font-serif {
     display: block;
 }
 
+/* Shopify Buy Button — match brand CTA styling */
+.shop-buy-wrap {
+    width: 100%;
+}
+
+.shop-buy-mount {
+    display: inline-block;
+    width: 100%;
+    max-width: 100%;
+}
+
+.shop-buy-mount .shopify-buy-frame,
+.shop-buy-mount .shopify-buy-frame--product {
+    max-width: 100% !important;
+    margin: 0 !important;
+}
+
+.shop-buy-mount .shopify-buy__product {
+    max-width: 100% !important;
+    margin: 0 !important;
+}
+
+.shop-buy-mount .shopify-buy__btn-wrapper {
+    margin: 0 !important;
+    width: 100%;
+}
+
+.shop-buy-mount .shopify-buy__btn {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+    .shop-buy-mount {
+        width: auto;
+    }
+
+    .shop-buy-mount .shopify-buy__btn {
+        width: auto;
+        min-width: 12rem;
+    }
+
+    .shop-buy-mount--lg .shopify-buy__btn {
+        min-width: 14rem;
+        font-size: 1.125rem !important;
+        padding: 1.25rem 4rem !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .shop-buy-mount--lg .shopify-buy__btn {
+        font-size: 1.25rem !important;
+        padding: 1.5rem 4rem !important;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     body { scroll-behavior: auto; }
     .fade-in {
